@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="base.css"/>
+</head>
+<body>
+
+    <ul>
+        <li>Da Feng</li>
+        <li>Talin</li>
+        <li>Rice</li>
+    </ul>
+
+    <script>
+        var body = document.body;
+        // DOM --> Document Object Model
+        var div = document.createElement('div'); // Creates a div element DOES NOT PUT IT IN THE DOM
+        body.appendChild(div);
+
+        div.innerHTML = 'Hello from Da Feng';
+
+        var arr = ['Da Feng', 'Talin', 'Rice'];
+
+        // create a ul element and append it to body
+        var ul = createElement('ul', '', document.body);
+        // loop over all the elements of the array
+        for (var i = 0, len = arr.length; i < len; i++) {
+            // create an li element and append it to the ul element
+            var li = createElement('li', arr[i], ul);
+        }
+
+        // creates an element, sets the innerHTML and appends to parent, if the parent
+        // is provided and returns the element.
+        function createElement(type, innerHTML, parent) {
+            var element = document.createElement(type);
+            element.innerHTML = innerHTML;
+            if (typeof parent !== 'undefined' ) {
+                parent.appendChild(element);
+            }
+            return element;
+        }
+
+        // todo: read from http://en.wikipedia.org/wiki/Document_type_definition - REFERENCE
+        // todo: read about http://www.w3schools.com/xml/xml_namespaces.asp - REFERENCE
+        // todo: https://developer.mozilla.org/en-US/docs/Web/SVG/Namespaces_Crash_Course - MATERIAL
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        // global context is owned by the global object
+
+        var name = 'bp'; // <global object>.name = 'bp';
+
+        function sayHello() { // Function declaration
+            console.log('Hello from ' + this.name);
+        }
+
+
+        sayHello(); // Function invocation
+
+        var riceSayHello = function () { // The part starting with the function is known a function expression
+            console.log('Hello from ' + 'Rice!');
+        };
+
+        var dafengSayHello = sayHello; // sayHello is a function expression
+
+        // Any term in a statement that evaluates to a function is known as a function expression
+        // 1 + 2, x, sayHello
+
+        console.log(dafengSayHello.toString());
+
+        var obj = {
+            name: 'Da Feng', // property
+            sayHello: function () { // method
+                console.log('Hello from ' + this.name); // this --> obj
+                sayHello();
+            },
+            sayHello_External: sayHello
+        };
+
+        obj.sayHello_External();
+        sayHello();
+        console.log('*******Executing obj.sayHello()*********');
+        obj.sayHello(); // 'Hello from Da Feng' \n 'Hello from bp'
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

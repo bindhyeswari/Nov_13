@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        // Datatypes
+
+        // string number boolean undefined null & object
+
+        var x = 'Rice';
+        var y = 10;
+        var z = true;
+        var a = undefined;
+        var b = null;
+
+        console.log(typeof b);
+
+        // a.id = 10; Typeerror
+        // b.id = 10; Typeerror
+
+        // object literal
+        var obj = {
+            name: 'Rice',
+            id: 64,
+            address: {
+                city: 'Fremont',
+                zip: '95129'
+            }
+        };
+
+        console.log(obj.name); // Dot operator
+        console.log(obj.id);
+
+        console.log(obj['name']); // Associative array notation
+        console.log(obj['id']);
+
+        obj.type = 'UI Developer'; // Dynamically add properties to the object
+        console.log(obj.type);
+
+        console.log('The zip code where Rice lives is: ' + obj.address.zip);
+        console.log('The zip code where Rice lives is: ' + obj['address']['zip']);
+
+        // Associative array notation vs Dot operator
+
+        var property_name = 'id';
+        console.log('The id of Rice is: ' + obj[property_name]);
+
+        var obj_a = {
+            id1: '64',
+            id2: '128',
+            id3: '256'
+        };
+
+        for (var i = 0; i < 3; i++) {
+            property_name = 'id' + ( i  + 1 ); // id1
+            console.log(' obj_a[' + property_name + '] = ' + obj_a[property_name]); // obj[id1] = 64
+        }
+
+        for (var prop in obj_a) {
+            console.log(' obj_a[' + prop + '] = ' + obj_a[prop]); // obj[id1] = 64
+        }
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+
+        // todo: Create an object with your educational details
+        // todo: Loop over all the properties and print it out using
+            // 1. The for i loop
+            // 2. The for var prop in loop
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
